@@ -13,11 +13,7 @@ from shapely.ops import unary_union
 from matplotlib import pyplot as plt
 import shapely.ops as so
 
-error = ['1','3','71','14']
-patches = ['13','21','32','38','45','56']
-id_list = ['61', '53', '24', '59', '23', '54', '11', '30', '47', '75'] 
-
-completed = ['34', '43', '49', '8', '68', '15', '18', '12', '44', '33', '39', '72', '40', '37', '16',]
+slide_list = []
 
 def get_iou(obj1,obj2):
     inter = obj1.geometry.intersection(obj2.geometry)
@@ -150,9 +146,9 @@ if __name__ == '__main__':
     
     record = open('/scratch/gaojud96/inference_data/record.txt','a+')
 
-    for id in error:
+    for id in slide_list:
 
-        file_path = f'/scratch/gaojud96/inference_data/{id}/toqupath_seg_withp.json'
+        file_path = f'/scratch/gaojud96/inference_data/{id}/predict_result.json'
         with open(file_path) as f:
             bbox = json.load(f)
 
