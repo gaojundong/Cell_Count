@@ -13,7 +13,7 @@ from shapely.ops import unary_union
 from matplotlib import pyplot as plt
 import shapely.ops as so
 
-slide_list = []
+slide_list = [1,3,7]
 
 def get_iou(obj1,obj2):
     inter = obj1.geometry.intersection(obj2.geometry)
